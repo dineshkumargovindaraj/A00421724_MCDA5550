@@ -36,7 +36,7 @@
                 app:fontFamily="monospace" />
 
             <EditText
-                android:id="@+id/editText9"
+                android:id="@+id/textName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -62,7 +62,7 @@
                 app:fontFamily="monospace" />
 
             <EditText
-                android:id="@+id/editText10"
+                android:id="@+id/textDOB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -87,7 +87,7 @@
                 app:fontFamily="monospace" />
 
             <EditText
-                android:id="@+id/editText11"
+                android:id="@+id/textHCN"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -112,7 +112,7 @@
                 app:fontFamily="serif" />
 
             <EditText
-                android:id="@+id/editText12"
+                android:id="@+id/textPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
