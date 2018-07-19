@@ -2,15 +2,18 @@ package com.example.dinn.bmiapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.EditText;
 import android.view.View;
 
 public class activity_calculate_bmi extends AppCompatActivity {
-
+    InClassDatabaseHelper helper;
+    Button calculateBMI = (Button) findViewById(R.id.buttonCalculateBmi);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculate_bmi);
+        helper = new InClassDatabaseHelper(this);
     }
 
     public void calculateBmi(View view){
@@ -30,6 +33,8 @@ public class activity_calculate_bmi extends AppCompatActivity {
         EditText result = (EditText) findViewById(R.id.textResult);
 
         result.setText(calc.toString());
+
+        helper.insertBMIDetails(heightVal,weightVal,calc);
 
     }
 }
