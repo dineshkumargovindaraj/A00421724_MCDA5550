@@ -8,7 +8,7 @@ import android.view.View;
 
 public class activity_calculate_bmi extends AppCompatActivity {
     InClassDatabaseHelper helper;
-    Button calculateBMI = (Button) findViewById(R.id.buttonCalculateBmi);
+    Button calculateBMI ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

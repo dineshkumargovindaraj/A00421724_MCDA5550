@@ -12,7 +12,7 @@ class InClassDatabaseHelper extends SQLiteOpenHelper{
     public InClassDatabaseHelper(Context context){
         super(context,DB_NAME,null, DB_VERSION);  //   null is for cursors}@
     }
-    SQLiteDatabase db;
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         //Create the Person Table
@@ -32,21 +32,25 @@ class InClassDatabaseHelper extends SQLiteOpenHelper{
     }
 
     public  void insertPersonDetails(String name , String password , String healthCardNumber , String date){
+        SQLiteDatabase db = getWritableDatabase();
         ContentValues personValues= new ContentValues();
         personValues.put("NAME", name);
         personValues.put("PASSWORD", password);
         personValues.put("HEALTH_CARD_NUMB", healthCardNumber);
         personValues.put("DATE", date);
         db.insert(TABLE_NAME,null, personValues);
+        db.close();
     }
 
     public  void insertBMIDetails(Double height , Double weight , Double result){
+        SQLiteDatabase db = getWritableDatabase();
         ContentValues bmiDetails = new ContentValues();
         bmiDetails.put("HEIGHT", height);
         bmiDetails.put("WEIGHT", weight);
         bmiDetails.put("RESULT", result);
 
         db.insert(TABLE_NAME,null, bmiDetails);
+        db.close();
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
