@@ -32,7 +32,7 @@ public class activity_calculate_bmi extends AppCompatActivity {
         Double calc = (weightVal / (heightVal * heightVal));
         EditText result = (EditText) findViewById(R.id.textResult);
 
-        result.setText(calc.toString());
+        result.setText(String.valueOf(calc));
 
         helper.insertBMIDetails(heightVal,weightVal,calc);
 

@@ -49,7 +49,7 @@ class InClassDatabaseHelper extends SQLiteOpenHelper{
         bmiDetails.put("WEIGHT", weight);
         bmiDetails.put("RESULT", result);
 
-        db.insert(TABLE_NAME,null, bmiDetails);
+        db.insert(TABLE_NAME1,null, bmiDetails);
         db.close();
     }
     @Override
