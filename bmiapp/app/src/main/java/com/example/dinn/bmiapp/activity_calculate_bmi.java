@@ -1,5 +1,6 @@
 package com.example.dinn.bmiapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
@@ -36,5 +37,17 @@ public class activity_calculate_bmi extends AppCompatActivity {
 
         helper.insertBMIDetails(heightVal,weightVal,calc);
 
+        PersonBMIHistory personHistory = new PersonBMIHistory(heightVal.toString(),weightVal.toString(),String.format("%.2f", calc),"");
+        helper.saveHistory(personHistory);
+
     }
+
+
+    public void onClickHist(View view) {
+
+        Intent intent = new Intent(this, BMIListActivity.class);
+        startActivity(intent);
+
+    }
+
 }
